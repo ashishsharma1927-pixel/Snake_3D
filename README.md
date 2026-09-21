@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Astro Snake 🐍🚀
 
 Welcome to **Astro Snake**, a stunning 3D procedural snake game built with React, Three.js (React Three Fiber), and Vite!
@@ -41,3 +42,7 @@ This repository includes an automated GitHub Actions workflow (`.github/workflow
 4. GitHub will automatically build and deploy your game!
 
 *(Note: If you are deploying to a project page e.g. `yourname.github.io/astro-snake`, ensure you add `base: '/astro-snake/'` to your `vite.config.ts` file!)*
+=======
+# Snake_3D
+It's a Fun Project 
+>>>>>>> a5c4cec4c135cbcb80f9372c8b66518d41f0b7d0
