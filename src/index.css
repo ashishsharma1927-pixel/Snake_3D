@@ -276,22 +276,56 @@ body {
 @media (max-width: 768px) {
   .menu-card {
     width: 90%;
-    padding: 20px;
+    padding: 15px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    gap: 15px;
   }
   .map-selection {
     flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .map-card {
+    padding: 8px;
   }
   .map-card img {
-    height: 80px;
+    height: 60px;
+    margin-bottom: 5px;
   }
   .splash-logo, .menu-logo {
-    width: 80%;
-    max-width: 300px;
+    width: 70%;
+    max-width: 250px;
+  }
+  .menu-btn {
+    padding: 12px 30px;
+    font-size: 18px;
   }
   
-  /* Show virtual joystick on mobile */
+  /* Virtual joystick adjustments for mobile */
   .mobile-controls {
     display: flex;
+    bottom: 20px;
+    padding: 0 15px;
+  }
+  .mobile-controls button {
+    width: 50px;
+    height: 50px;
+    font-size: 14px;
+  }
+  .dpad {
+    grid-template-columns: 50px 50px 50px;
+    grid-template-rows: 50px 50px 50px;
+    gap: 5px;
+  }
+  .action-buttons .go {
+    width: 70px;
+    height: 70px;
+  }
+  .action-buttons .stop {
+    width: 55px;
+    height: 55px;
   }
   
   .score-display {
