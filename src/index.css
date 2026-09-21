@@ -1,0 +1,302 @@
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: dark;
+  background-color: #000;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+/* UI Overlay for Gameplay */
+.ui-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.score-display {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+  font-family: 'Orbitron', 'Inter', sans-serif;
+  letter-spacing: 2px;
+}
+
+/* Splash Screen */
+.splash-screen {
+  position: absolute;
+  inset: 0;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  animation: splashFadeIn 1s ease-out forwards;
+}
+.splash-screen.fade-out {
+  animation: splashFadeOut 1s ease-in forwards;
+}
+
+.splash-logo {
+  width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 0 50px rgba(0, 200, 255, 0.5);
+  animation: pulseLogo 2s infinite ease-in-out;
+}
+
+@keyframes splashFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes splashFadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; visibility: hidden; }
+}
+@keyframes pulseLogo {
+  0% { transform: scale(0.95); box-shadow: 0 0 30px rgba(0, 200, 255, 0.3); }
+  50% { transform: scale(1.0); box-shadow: 0 0 60px rgba(0, 200, 255, 0.8); }
+  100% { transform: scale(0.95); box-shadow: 0 0 30px rgba(0, 200, 255, 0.3); }
+}
+
+/* Dashboard Menu */
+.menu-screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 40;
+  animation: splashFadeIn 0.5s ease-out;
+}
+
+.menu-card {
+  background: rgba(25, 25, 35, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 0 20px rgba(255,255,255,0.05);
+  width: 650px;
+}
+
+.menu-logo {
+  width: 200px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+/* Map Selection UI */
+.map-selection {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.map-card {
+  flex: 1;
+  background: rgba(0,0,0,0.5);
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  transition: all 0.3s ease;
+}
+.map-card img {
+  width: 100%;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+.map-card.selected {
+  border-color: #00c6ff;
+  box-shadow: 0 0 15px rgba(0, 198, 255, 0.5);
+  background: rgba(0, 198, 255, 0.1);
+}
+.map-card:hover:not(.selected) {
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.5);
+}
+
+.menu-btn {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  border: none;
+  border-radius: 12px;
+  padding: 15px 50px;
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
+  width: 100%;
+}
+
+.menu-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 114, 255, 0.6);
+}
+.menu-btn:active {
+  transform: translateY(1px);
+}
+
+.menu-btn.quit {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  box-shadow: 0 4px 15px rgba(255, 65, 108, 0.4);
+}
+.menu-btn.quit:hover {
+  box-shadow: 0 10px 25px rgba(255, 65, 108, 0.6);
+}
+
+/* Quit Screen */
+.quit-screen {
+  position: absolute;
+  inset: 0;
+  background-color: #050510;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  color: #fff;
+  text-align: center;
+}
+
+.quit-screen h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.quit-screen p {
+  font-size: 20px;
+  color: #888;
+}
+
+/* --- MOBILE CONTROLS --- */
+.mobile-controls {
+  display: none; /* Hidden on desktop */
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 30px;
+  box-sizing: border-box;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.mobile-controls button {
+  pointer-events: auto;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 18px;
+  font-weight: bold;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  user-select: none;
+  touch-action: none; /* Prevent scroll on touch */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.mobile-controls button:active {
+  background: rgba(0, 198, 255, 0.5);
+  transform: scale(0.95);
+}
+
+.dpad {
+  display: grid;
+  grid-template-columns: 60px 60px 60px;
+  grid-template-rows: 60px 60px 60px;
+  gap: 10px;
+}
+.dpad .up { grid-column: 2; grid-row: 1; }
+.dpad .left { grid-column: 1; grid-row: 2; }
+.dpad .right { grid-column: 3; grid-row: 2; }
+.dpad .down { grid-column: 2; grid-row: 3; }
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.action-buttons .go {
+  width: 80px; 
+  height: 80px; 
+  background: rgba(0, 255, 100, 0.2); 
+  border-color: rgba(0, 255, 100, 0.6);
+}
+.action-buttons .stop {
+  width: 60px; 
+  height: 60px; 
+  background: rgba(255, 50, 50, 0.2);
+  border-color: rgba(255, 50, 50, 0.6);
+}
+.action-buttons .go:active { background: rgba(0, 255, 100, 0.6); }
+.action-buttons .stop:active { background: rgba(255, 50, 50, 0.6); }
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 768px) {
+  .menu-card {
+    width: 90%;
+    padding: 20px;
+  }
+  .map-selection {
+    flex-direction: column;
+  }
+  .map-card img {
+    height: 80px;
+  }
+  .splash-logo, .menu-logo {
+    width: 80%;
+    max-width: 300px;
+  }
+  
+  /* Show virtual joystick on mobile */
+  .mobile-controls {
+    display: flex;
+  }
+  
+  .score-display {
+    font-size: 24px;
+    top: 10px;
+    left: 10px;
+  }
+}
