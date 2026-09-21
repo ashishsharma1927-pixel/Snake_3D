@@ -33,13 +33,49 @@ body {
 .score-display {
   position: absolute;
   top: 20px;
-  left: 20px;
+  right: 30px;
   font-size: 32px;
   font-weight: bold;
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
   font-family: 'Orbitron', 'Inter', sans-serif;
   letter-spacing: 2px;
+}
+
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 10px 20px;
+  color: white;
+  font-family: 'Orbitron', 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  pointer-events: auto;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+  z-index: 100;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+.back-btn:active {
+  transform: scale(0.95);
+}
+
+.desktop-controls-help {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: rgba(255,255,255,0.5);
+  font-family: 'Inter';
 }
 
 /* Splash Screen */
@@ -329,8 +365,19 @@ body {
   }
   
   .score-display {
-    font-size: 24px;
-    top: 10px;
-    left: 10px;
+    font-size: 20px;
+    top: 15px;
+    right: 15px;
+  }
+  
+  .back-btn {
+    top: 15px;
+    left: 15px;
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+  
+  .desktop-controls-help {
+    display: none; /* Hide keyboard help on mobile */
   }
 }

@@ -103,12 +103,12 @@ export default function App() {
       {/* PLAYING UI */}
       {gameState === 'playing' && (
         <div className="ui-container">
+          <button className="back-btn" onClick={() => setGameState('menu')}>
+            &#8592; MENU
+          </button>
           <div className="score-display">SCORE: {score}</div>
-          
-          <div style={{position: 'absolute', bottom: '20px', left: '20px', color: 'white', opacity: 0.5}}>
-            <div>W/S: Move Forward/Backward</div>
-            <div>A/D: Turn Left/Right</div>
-            <div>Up/Down Arrows: Pitch Up/Down</div>
+          <div className="desktop-controls-help">
+            W/S: Move Forward/Backward<br/>A/D: Turn Left/Right<br/>Up/Down Arrows: Pitch Up/Down
           </div>
         </div>
       )}
