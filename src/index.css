@@ -9,13 +9,13 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100dvh;
   overflow: hidden;
 }
 
 #root {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   position: relative;
 }
 
@@ -306,26 +306,26 @@ body {
   /* Virtual joystick adjustments for mobile */
   .mobile-controls {
     display: flex;
-    bottom: 20px;
-    padding: 0 15px;
+    bottom: 60px; /* Moved up to avoid overlapping with HUD text and screen edges */
+    padding: 0 10px;
   }
   .mobile-controls button {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     font-size: 14px;
   }
   .dpad {
-    grid-template-columns: 50px 50px 50px;
-    grid-template-rows: 50px 50px 50px;
+    grid-template-columns: 45px 45px 45px;
+    grid-template-rows: 45px 45px 45px;
     gap: 5px;
   }
   .action-buttons .go {
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 65px;
   }
   .action-buttons .stop {
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
   }
   
   .score-display {
