@@ -147,8 +147,8 @@ export function GameScene({ setScore, score, mapType = 'galaxy' }: GameSceneProp
     // 3D Flight Controls
     if (keys.current.left) snakeYaw.current += 3.0 * delta;
     if (keys.current.right) snakeYaw.current -= 3.0 * delta;
-    if (keys.current.pitchUp) snakePitch.current += 2.5 * delta;
-    if (keys.current.pitchDown) snakePitch.current -= 2.5 * delta;
+    if (keys.current.pitchUp) snakePitch.current -= 2.5 * delta;
+    if (keys.current.pitchDown) snakePitch.current += 2.5 * delta;
 
     snakePitch.current = Math.max(-Math.PI/2 + 0.1, Math.min(Math.PI/2 - 0.1, snakePitch.current));
 
