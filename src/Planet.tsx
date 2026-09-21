@@ -11,16 +11,16 @@ interface PlanetProps {
 }
 
 export const Planet: React.FC<PlanetProps> = ({ position, scale = 1, color = 0xffffff, type = 0 }) => {
-  const earthTexture = useTexture('/planet_texture.jpg');
-  const marsTexture = useTexture('/mars_texture.jpg');
-  const gasTexture = useTexture('/gas_giant_texture.jpg');
-  const asteroidTexture = useTexture('/asteroid_texture.jpg');
+  const earthTexture = useTexture(`${import.meta.env.BASE_URL}planet_texture.jpg`);
+  const marsTexture = useTexture(`${import.meta.env.BASE_URL}mars_texture.jpg`);
+  const gasTexture = useTexture(`${import.meta.env.BASE_URL}gas_giant_texture.jpg`);
+  const asteroidTexture = useTexture(`${import.meta.env.BASE_URL}asteroid_texture.jpg`);
   
-  const crystalPurple = useTexture('/crystal_texture.jpg');
-  const crystalGreen = useTexture('/crystal_green.jpg');
-  const crystalBlue = useTexture('/crystal_blue.jpg');
+  const crystalPurple = useTexture(`${import.meta.env.BASE_URL}crystal_texture.jpg`);
+  const crystalGreen = useTexture(`${import.meta.env.BASE_URL}crystal_green.jpg`);
+  const crystalBlue = useTexture(`${import.meta.env.BASE_URL}crystal_blue.jpg`);
   
-  const fishTexture = useTexture('/fish_scales.jpg');
+  const fishTexture = useTexture(`${import.meta.env.BASE_URL}fish_scales.jpg`);
 
   const planetTextures = [earthTexture, marsTexture, gasTexture, asteroidTexture];
   const crystalTextures = [crystalPurple, crystalGreen, crystalBlue];

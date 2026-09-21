@@ -57,35 +57,35 @@ export default function App() {
 
       {gameState === 'splash' && (
         <div className={`splash-screen ${splashFading ? 'fade-out' : ''}`}>
-          <img src="/game_logo.jpg" alt="Astro Snake Logo" className="splash-logo" />
+          <img src={`${import.meta.env.BASE_URL}game_logo.jpg`} alt="Astro Snake Logo" className="splash-logo" />
         </div>
       )}
 
       {gameState === 'menu' && (
         <div className="menu-screen">
           <div className="menu-card">
-            <img src="/game_logo.jpg" alt="Astro Snake Logo" className="menu-logo" />
+            <img src={`${import.meta.env.BASE_URL}game_logo.jpg`} alt="Astro Snake Logo" className="menu-logo" />
             
             <div className="map-selection">
               <div 
                 className={`map-card ${mapType === 'galaxy' ? 'selected' : ''}`}
                 onClick={() => setMapType('galaxy')}
               >
-                <img src="/space_bg.jpg" alt="Galaxy" />
+                <img src={`${import.meta.env.BASE_URL}space_bg.jpg`} alt="Galaxy" />
                 <div>Deep Space</div>
               </div>
               <div 
                 className={`map-card ${mapType === 'city' ? 'selected' : ''}`}
                 onClick={() => setMapType('city')}
               >
-                <img src="/city_skybox.jpg" alt="Neon City" />
+                <img src={`${import.meta.env.BASE_URL}city_skybox.jpg`} alt="Neon City" />
                 <div>Neon City</div>
               </div>
               <div 
                 className={`map-card ${mapType === 'water' ? 'selected' : ''}`}
                 onClick={() => setMapType('water')}
               >
-                <img src="/water_skybox.jpg" alt="Ocean" />
+                <img src={`${import.meta.env.BASE_URL}water_skybox.jpg`} alt="Ocean" />
                 <div>Ocean Depth</div>
               </div>
             </div>

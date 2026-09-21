@@ -7,21 +7,21 @@ import * as THREE from 'three';
 import { useTexture } from '@react-three/drei';
 
 function SpaceBackground() {
-  const bgTexture = useTexture('/space_bg.jpg');
+  const bgTexture = useTexture(`${import.meta.env.BASE_URL}space_bg.jpg`);
   bgTexture.mapping = THREE.EquirectangularReflectionMapping;
   bgTexture.colorSpace = THREE.SRGBColorSpace;
   return <primitive attach="background" object={bgTexture} />;
 }
 
 function CityBackground() {
-  const bgTexture = useTexture('/city_skybox.jpg');
+  const bgTexture = useTexture(`${import.meta.env.BASE_URL}city_skybox.jpg`);
   bgTexture.mapping = THREE.EquirectangularReflectionMapping;
   bgTexture.colorSpace = THREE.SRGBColorSpace;
   return <primitive attach="background" object={bgTexture} />;
 }
 
 function WaterBackground() {
-  const bgTexture = useTexture('/water_skybox.jpg');
+  const bgTexture = useTexture(`${import.meta.env.BASE_URL}water_skybox.jpg`);
   bgTexture.mapping = THREE.EquirectangularReflectionMapping;
   bgTexture.colorSpace = THREE.SRGBColorSpace;
   return <primitive attach="background" object={bgTexture} />;

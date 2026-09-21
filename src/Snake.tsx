@@ -9,9 +9,9 @@ interface SnakeProps {
   length: number; // Based on score
 }
 
-export function Snake({ headPosRef, headEulerRef, length }: SnakeProps) {
+export const Snake = ({ headPosRef, headEulerRef, length = 0 }: SnakeProps) => {
   // Use the realistic snake texture uploaded by the user
-  const texture = useTexture('/snake_scales.jpg');
+  const texture = useTexture(`${import.meta.env.BASE_URL}snake_scales.jpg`);
   
   // Breadcrumb trail config
   const maxHistory = 400;
